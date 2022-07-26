@@ -1,8 +1,10 @@
 package kr.hs.emirim.s2125.mirim_project_0726_2;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.ContextMenu;
@@ -31,7 +33,27 @@ public class MainActivity extends AppCompatActivity {
 
         Button btn3 = findViewById(R.id.btn_toast);
         btn3.setOnClickListener(toastListener);
+        Button btn4 = findViewById(R.id.btn_dialog);
+        btn4.setOnClickListener(dialogListener);
     }
+
+    View.OnClickListener dialogListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            AlertDialog.Builder dialong = new AlertDialog.Builder(MainActivity.this);
+            dialong.setIcon(R.drawable.icon);
+            dialong.setTitle("대화상자연습");
+            dialong.setMessage("여기는 대화상자 내용이 들어갑니다.");
+            dialong.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    linear.setBackgroundColor(Color.MAGENTA);
+                }
+            });
+            dialong.setNegativeButton("취소",null);
+            dialong.show();
+        }
+    };
 
     View.OnClickListener toastListener = new View.OnClickListener() {
         @Override
