@@ -1,10 +1,13 @@
 package kr.hs.emirim.s2125.mirim_project_0726_2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -39,5 +42,28 @@ public class MainActivity extends AppCompatActivity {
                 inflater.inflate(R.menu.contextmenu2,menu);
                 break;
         }
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        super.onContextItemSelected(item);
+        switch (item.getItemId()){
+            case R.id.item_bg_red:
+                linear.setBackgroundColor(Color.RED);
+                return true;
+            case R.id.item_bg_black:
+                linear.setBackgroundColor(Color.BLACK);
+                return true;
+            case R.id.item_bg_white:
+                linear.setBackgroundColor(Color.WHITE);
+                return true;
+            case R.id.item_rotate:
+                btn2.setRotation(50);
+                return true;
+            case R.id.item_zoom:
+                btn2.setScaleX(2);
+                return true;
+        }
+        return false;
     }
 }
