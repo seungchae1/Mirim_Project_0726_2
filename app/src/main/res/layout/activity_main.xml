@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:gravity="center_horizontal"
-    android:id="@+id/linear"
+    android:id="@+id/linear1"
     android:orientation="vertical">
 
     <Button
