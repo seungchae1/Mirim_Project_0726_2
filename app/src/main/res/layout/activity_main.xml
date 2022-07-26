@@ -39,5 +39,11 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#A8A8A8"
         android:text="목록대화상자 출력"/>
+    <Button
+        android:id="@+id/btn_dialog_radio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#A8A8A8"
+        android:text="라디오버튼목록대화상자"/>
 
 </LinearLayout>
